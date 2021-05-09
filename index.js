@@ -44,6 +44,10 @@ app.post('/search', (req, res) => {
     })
 })
 
-
+app.post('/book/:id', (req, res) => {
+  // console.log(req.params.id);
+  holidayItem.findById(req.params.id)
+    .then(item => res.json(item))
+})
 
 // { location: req.body.location, activity: req.body.activity }
